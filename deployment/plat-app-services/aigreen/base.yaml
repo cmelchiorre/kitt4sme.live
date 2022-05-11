@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: aigreen
+  name: aigreen-hello-svc
+spec:
+  ports:
+  - name: http
+    port: 8000
+  selector:
+    app: aigreen
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen
+  name: aigreen-hello-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen
+  template:
+    spec:
+      containers:
+        #- image: "ghcr.io/c0c0n3/kitt4sme.roughnator:latest"
+        - image: "aigreen/hello:0.1.0"
+          imagePullPolicy: IfNotPresent
+          name: aigreen-hello
+          ports:
+          - containerPort: 8000
+            name: http
+          env:
+          - name: "ORION_BASE_URL"
+            value: "http://orion:1026"

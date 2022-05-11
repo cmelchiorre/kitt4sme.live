@@ -6,7 +6,9 @@ metadata:
 spec:
   project: mesh-infra
   source:
-    repoURL: https://github.com/c0c0n3/kitt4sme.live
+    # repoURL: https://github.com/c0c0n3/kitt4sme.live
+    # seems that kustomize isn't properly replacing urls; to test if this causes the problems in argocd CI configuration try to manually change repoURL value
+    repoURL: https://github.com/cmelchiorre/kitt4sme.live
     targetRevision: HEAD
     path: deployment/mesh-infra/app
   destination:
