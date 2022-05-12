@@ -17,7 +17,7 @@ resources:
 # NOTE. If you're familiar w/ Kustomize, a much better option is to use
 # a proper overlay.
 #
-# - _replacements_/
+- _replacements_/
 
 # replacements:
 # - path: _replacements_/argocd-sso.yaml
