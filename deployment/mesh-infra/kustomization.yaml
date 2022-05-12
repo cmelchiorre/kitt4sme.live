@@ -19,7 +19,7 @@ resources:
 #
 - _replacements_/
 
-# replacements:
-# - path: _replacements_/argocd-sso.yaml
-# - path: _replacements_/argocd-webapp.yaml
-# - path: _replacements_/gitops-repo.yaml
+replacements:
+- path: _replacements_/argocd-sso.yaml
+- path: _replacements_/argocd-webapp.yaml
+- path: _replacements_/gitops-repo.yaml
