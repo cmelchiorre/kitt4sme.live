@@ -17,10 +17,10 @@ data:
   # - https://kitt4sme.collab-cloud.eu/argocd
   
   # settings for algowatt's server
-  # argocd.webapp: http://172.16.0.169/argocd
+  argocd.webapp: http://172.16.0.169/argocd
   
   # settings for local vagrant vm
-  argocd.webapp: http://192.168.33.100/argocd
+  # argocd.webapp: http://192.168.33.100/argocd
 
   # OIDC config. You only need this if you've configured Argo CD to do
   # SSO with Keycloak. The only thing you should change in the block
@@ -32,10 +32,10 @@ data:
     name: Keycloak
     
     # algowatt's server
-    # issuer: http://172.16.0.169/auth/realms/master
+    issuer: http://172.16.0.169/auth/realms/master
     
     # local vagrant vm
-    issuer: http://192.168.33.100/auth/realms/master
+    # issuer: http://192.168.33.100/auth/realms/master
     
     clientID: argocd
     clientSecret: $oidc.keycloak.clientSecret
