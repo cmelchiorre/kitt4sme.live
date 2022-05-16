@@ -22,6 +22,9 @@ spec:
     matchLabels:
       app: aigreen
   template:
+    metadata:
+      labels:
+        app: aigreen
     spec:
       containers:
         #- image: "ghcr.io/c0c0n3/kitt4sme.roughnator:latest"
