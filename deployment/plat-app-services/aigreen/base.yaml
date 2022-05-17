@@ -28,7 +28,8 @@ spec:
     spec:
       containers:
         #- image: "ghcr.io/c0c0n3/kitt4sme.roughnator:latest"
-        - image: "172.16.0.169:31320/aigreen/hello:0.1.0"
+        #- image: "172.16.0.169:31320/aigreen/hello:0.1.0"
+        - image: "cmelchiorre/aigreen:hello-01.10" # docker hub
           imagePullPolicy: IfNotPresent
           name: aigreen-hello
           ports:
