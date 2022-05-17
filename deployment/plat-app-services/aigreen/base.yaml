@@ -27,8 +27,8 @@ spec:
         app: aigreen
     spec:
       containers:
-        - image: "172.16.0.169:31320/aigreen/hello:0.1.0" # private repository
-        # - image: "cmelchiorre/aigreen:hello-0.1.0" # docker hub
+        #- image: "172.16.0.169:31320/aigreen/hello:0.1.0" # private repository
+        - image: "cmelchiorre/aigreen:hello-0.1.0" # docker hub
           imagePullPolicy: IfNotPresent
           name: aigreen-hello
           ports:
