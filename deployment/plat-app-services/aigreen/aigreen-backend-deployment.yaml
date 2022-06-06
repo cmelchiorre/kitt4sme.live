@@ -23,6 +23,11 @@ spec:
           env:
           - name: "ORION_BASE_URL"
             value: "http://orion:1026"
+          volumeMounts:
+            - mountPath: /opt/app/nn_web_service/saved_models
+              name: aigreen-backend-models-claim
+            - mountPath: /opt/app/nn_web_service/config/customization
+              name: aigreen-backend-customization-claim
       volumes:
         - name: aigreen-backend-models-claim
           persistentVolumeClaim:
