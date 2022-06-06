@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: aigreen-backend-models-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    name: aigreen-backend-models-claim
+  hostPath:
+  # using local persistent volumes for the modment
+  # it must be configured with actual target volume base path
+    path: "/home/algo/volumes/digesto/backend/saved_models"
+    type: DirectoryOrCreate
+  # in case using volumes on NFS the above must be changed to:
+  # nfs:
+  #   server: {{NFS SERVER}}
+  #   path: "{{NFS PATH}}

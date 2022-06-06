@@ -3,3 +3,10 @@ kind: Kustomization
 
 resources:
 - base.yaml
+- aigreen-backend-customization-pv.yaml
+- aigreen-backend-customization-pvc.yaml
+- aigreen-backend-models-pv.yaml
+- aigreen-backend-models-pvc.yaml
+- aigreen-backend-deployment.yaml
+- aigreen-backend-nodeport.yaml
+- aigreen-backend-svc.yaml

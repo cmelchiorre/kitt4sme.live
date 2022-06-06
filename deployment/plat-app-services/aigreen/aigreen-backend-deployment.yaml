@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-backend
+  name: aigreen-backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-backend
+  template:
+    metadata:
+      labels:
+        app: aigreen-backend
+    spec:
+      containers:
+        - image: "cmelchiorre/kitt4sme:ta08-backend-0.1"
+          imagePullPolicy: IfNotPresent
+          name: aigreen-backend
+          ports:
+          - containerPort: 8000
+            name: http
+          env:
+          - name: "ORION_BASE_URL"
+            value: "http://orion:1026"
+      volumes:
+        - name: aigreen-backend-models-claim
+          persistentVolumeClaim:
+            claimName: aigreen-backend-models-claim
+        - name: aigreen-backend-customization-claim
+          persistentVolumeClaim:
+            claimName: aigreen-backend-customization-claim
