@@ -25,13 +25,13 @@ spec:
             value: "http://orion:1026"
           volumeMounts:
             - mountPath: /opt/app/nn_web_service/saved_models
-              name: aigreen-backend-models-claim
+              name: aigreen-backend-models-pvc
             - mountPath: /opt/app/nn_web_service/config/customization
-              name: aigreen-backend-customization-claim
+              name: aigreen-backend-customization-pvc
       volumes:
-        - name: aigreen-backend-models-claim
+        - name: aigreen-backend-models-pvc
           persistentVolumeClaim:
-            claimName: aigreen-backend-models-claim
-        - name: aigreen-backend-customization-claim
+            claimName: aigreen-backend-models-pvc
+        - name: aigreen-backend-customization-pvc
           persistentVolumeClaim:
-            claimName: aigreen-backend-customization-claim
+            claimName: aigreen-backend-customization-pvc

@@ -11,7 +11,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   claimRef:
-    name: aigreen-backend-models-claim
+    name: aigreen-backend-models-pvc
   hostPath:
   # using local persistent volumes for the modment
   # it must be configured with actual target volume base path
