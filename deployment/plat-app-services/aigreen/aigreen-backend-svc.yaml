@@ -8,5 +8,7 @@ spec:
   ports:
   - name: http
     port: 8000
+    protocol: TCP
+    targetPort: 8000
   selector:
-    app: aigreen
+    app: aigreen-backend
