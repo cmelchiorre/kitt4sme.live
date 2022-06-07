@@ -11,6 +11,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   claimRef:
+    namespace: default
     name: aigreen-backend-models-pvc
   hostPath:
   # using local persistent volumes for the modment
