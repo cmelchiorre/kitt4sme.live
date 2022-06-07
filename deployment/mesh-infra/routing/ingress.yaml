@@ -79,10 +79,10 @@ spec:
           number: 8000
   - match:  
     - uri:
-        prefix: /aigreen
+        prefix: /aigreen-backend
     route:
     - destination:
-        host: aigreen.default.svc.cluster.local
+        host: aigreen-backend-svc.default.svc.cluster.local
         port:
           number: 8000
 # NOTE
