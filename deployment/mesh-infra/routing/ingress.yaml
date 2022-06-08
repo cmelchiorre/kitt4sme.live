@@ -85,6 +85,14 @@ spec:
         host: aigreen-backend-svc.default.svc.cluster.local
         port:
           number: 8000
+  - match:  
+    - uri:
+        prefix: /aigreen-dbadmin
+    route:
+    - destination:
+        host: aigreen-backend-dbadmin-svc.default.svc.cluster.local
+        port:
+          number: 80
 # NOTE
 # 1. URL rewriting. We use overlapping prefixes to make sure `/x`, `/x/`
 # and `/x/p` get rewritten to `/`, `/` and `/p` respectively. Istio will
