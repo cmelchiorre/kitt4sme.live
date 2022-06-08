@@ -92,7 +92,7 @@ spec:
     - destination:
         host: aigreen-backend-svc.default.svc.cluster.local
         port:
-          number: 8000
+          number: 5000
   - match:  
     - uri:
         prefix: /aigreen-dbadmin
