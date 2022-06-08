@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-backend-dbadmin
+  name: aigreen-backend-dbadmin-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-backend-dbadmin
+  template:
+    metadata:
+      labels:
+        app: aigreen-backend-dbadmin
+    spec:
+      containers:
+        - image: "phpmyadmin"
+          imagePullPolicy: IfNotPresent
+          name: aigreen-backend-dbadmin
+          ports:
+          - containerPort: 80
+            name: http
+          env:
+          - name: "PMA_ARBITRARY"
+            value: "1" 
+          volumeMounts:
+            - mountPath: /sessions
+              name: aigreen-backend-dbadmin-pvc
+      volumes:
+        - name: aigreen-backend-dbadmin-pvc
+          persistentVolumeClaim:
+            claimName: aigreen-backend-dbadmin-pvc

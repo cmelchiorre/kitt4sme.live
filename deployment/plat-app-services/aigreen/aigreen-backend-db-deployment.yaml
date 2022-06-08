@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-backend-db
+  name: aigreen-backend-db-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-backend-db
+  template:
+    metadata:
+      labels:
+        app: aigreen-backend-db
+    spec:
+      containers:
+        - image: "mysql:5.6"
+          imagePullPolicy: IfNotPresent
+          name: aigreen-backend-db
+          ports:
+          - containerPort: 3306
+            name: http
+          env:
+            # @TODO: move credentials to a SealedSecret resource
+          - name: "MYSQL_ROOT_PASSWORD"
+            value: "a1gr3en@2022" 
+          - name: "MYSQL_DATABASE"
+            value: "aigreen" 
+          - name: "MYSQL_USER"
+            value: "aigreen" 
+          - name: "MYSQL_PASSWORD"
+            value: "aigreen" 
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: aigreen-backend-db-pvc
+      volumes:
+        - name: aigreen-backend-db-pvc
+          persistentVolumeClaim:
+            claimName: aigreen-backend-db-pvc
