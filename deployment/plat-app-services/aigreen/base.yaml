@@ -2,29 +2,45 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: aigreen
+    app: aigreen-hello
   name: aigreen-hello-svc
 spec:
   ports:
   - name: http
     port: 8000
   selector:
-    app: aigreen
+    app: aigreen-hello
+---
+apiVersion: v1
+kind: NodePort
+metadata:
+  labels:
+    app: aigreen-hello
+  name: aigreen-hello-nodeport
+spec:
+  ports:
+  - name: http
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+    nodePort: 32001
+  selector:
+    app: aigreen-hello
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: aigreen
+    app: aigreen-hello
   name: aigreen-hello-deployment
 spec:
   selector:
     matchLabels:
-      app: aigreen
+      app: aigreen-hello
   template:
     metadata:
       labels:
-        app: aigreen
+        app: aigreen-hello
     spec:
       containers:
         #- image: "172.16.0.169:31320/aigreen/hello:0.1.0" # private repository
