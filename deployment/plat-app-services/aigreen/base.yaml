@@ -12,18 +12,19 @@ spec:
     app: aigreen-hello
 ---
 apiVersion: v1
-kind: NodePort
+kind: Service
 metadata:
   labels:
     app: aigreen-hello
   name: aigreen-hello-nodeport
 spec:
+  type: NodePort
   ports:
   - name: http
     port: 8000
     protocol: TCP
     targetPort: 8000
-    nodePort: 32100
+    nodePort: 32001
   selector:
     app: aigreen-hello
 ---
