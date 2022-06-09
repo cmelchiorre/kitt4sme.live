@@ -1,0 +1,17 @@
+# just needed for testing external access before adding an ingress entry for the service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: aigreen-frontend
+  name: aigreen-frontend-nodeport
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    port: 4200
+    protocol: TCP
+    targetPort: 4200
+    nodePort: 34200
+  selector:
+    app: aigreen-frontend

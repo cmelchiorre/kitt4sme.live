@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: aigreen-frontend
+  name: aigreen-frontend-svc
+spec:
+  ports:
+  - name: http
+    port: 4200
+    protocol: TCP
+    targetPort: 4200
+  selector:
+    app: aigreen-frontend

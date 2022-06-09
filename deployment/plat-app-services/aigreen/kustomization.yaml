@@ -22,3 +22,7 @@ resources:
 - aigreen-backend-dbadmin-pv.yaml
 - aigreen-backend-dbadmin-pvc.yaml
 - aigreen-backend-dbadmin-svc.yaml
+# frontend component
+- aigreen-frontend-deployment.yaml
+- aigreen-frontend-nodeport.yaml
+- aigreen-frontend-svc.yaml

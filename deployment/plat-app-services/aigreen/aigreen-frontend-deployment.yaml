@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-frontend
+  name: aigreen-frontend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-frontend
+  template:
+    metadata:
+      labels:
+        app: aigreen-frontend
+    spec:
+      containers:
+        - image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.0"
+          imagePullPolicy: IfNotPresent
+          name: aigreen-frontend
+          ports:
+          - containerPort: 4200
+            name: http
