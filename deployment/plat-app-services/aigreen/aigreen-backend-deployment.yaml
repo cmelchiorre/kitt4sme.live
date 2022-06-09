@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - image: "cmelchiorre/kitt4sme:ta08-backend-0.1"
-          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           name: aigreen-backend
           ports:
           - containerPort: 5000

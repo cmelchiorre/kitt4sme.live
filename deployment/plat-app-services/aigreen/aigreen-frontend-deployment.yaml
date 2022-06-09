@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.0"
-          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           name: aigreen-frontend
           ports:
           - containerPort: 4200
