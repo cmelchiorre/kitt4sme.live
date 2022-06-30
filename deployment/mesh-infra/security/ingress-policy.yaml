@@ -29,3 +29,12 @@ spec:
         - "/orion/*"
         - "/orion/version"
         - "/quantumleap/version"
+        # AIGreen
+        - "/aigreen-hello"
+        - "/aigreen-hello/*"
+        - "/aigreen-backend"
+        - "/aigreen-backend/*"
+        - "/aigreen-dbadmin"
+        - "/aigreen-dbadmin/*"
+        - "/aigreen-frontend"
+        - "/aigreen-frontend/*"
