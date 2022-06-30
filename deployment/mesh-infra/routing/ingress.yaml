@@ -104,6 +104,8 @@ spec:
   - match:  
     - uri:
         prefix: /aigreen-frontend
+    rewrite:
+      uri: /
     route:
     - destination:
         host: aigreen-frontend-svc.default.svc.cluster.local
