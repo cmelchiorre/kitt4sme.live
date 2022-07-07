@@ -14,7 +14,7 @@ spec:
         app: aigreen-frontend
     spec:
       containers:
-        - image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.2-test-base-href"
+        - image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.2-test-base-href-2"
           # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           name: aigreen-frontend
