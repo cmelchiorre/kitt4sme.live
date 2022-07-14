@@ -14,10 +14,10 @@ spec:
         app: aigreen-frontend
     spec:
       containers:
-        - image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.2-test-base-href-3"
-          imagePullPolicy: Always
-          # image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.1"
+        - imagePullPolicy: Always
           # imagePullPolicy: IfNotPresent
+          #image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.2-test-base-href-3"
+          image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.1"
           name: aigreen-frontend
           ports:
           - containerPort: 4200
