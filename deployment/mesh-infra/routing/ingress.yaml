@@ -88,6 +88,8 @@ spec:
   - match:  
     - uri:
         prefix: /aigreen-backend
+    rewrite:
+      uri: /
     route:
     - destination:
         host: aigreen-backend-svc.default.svc.cluster.local
