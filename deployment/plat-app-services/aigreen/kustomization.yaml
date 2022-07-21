@@ -9,7 +9,7 @@ resources:
 - aigreen-backend-models-pv.yaml
 - aigreen-backend-models-pvc.yaml
 - aigreen-backend-deployment.yaml
-- aigreen-backend-nodeport.yaml
+# - aigreen-backend-nodeport.yaml
 - aigreen-backend-svc.yaml
 # storage component
 - aigreen-backend-db-deployment.yaml
