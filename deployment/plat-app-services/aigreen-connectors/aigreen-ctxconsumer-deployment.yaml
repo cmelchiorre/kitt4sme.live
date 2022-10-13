@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-ctxconsumer
+  name: aigreen-ctxconsumer-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-ctxconsumer
+  template:
+    metadata:
+      labels:
+        app: aigreen-ctxconsumer
+    spec:
+      containers:
+        - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.0.0"
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          name: aigreen-ctxconsumer
+          ports:
+          - containerPort: 8000
+            name: http
+          env:
+          - name: "ORION_BASE_URL"
+            value: "http://orion:1026"
+          - name: "EXCEL_FILE_PATH"
+            value: "/data"
+          volumeMounts:
+            - mountPath: /data
+              name: aigreen-ctxconsumer-data-pvc
+      volumes:
+        - name: aigreen-ctxconsumer-data-pvc
+          persistentVolumeClaim:
+            claimName: aigreen-ctxconsumer-data-pvc

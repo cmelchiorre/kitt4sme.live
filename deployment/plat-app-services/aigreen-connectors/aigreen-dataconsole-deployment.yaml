@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-dataconsole
+  name: aigreen-dataconsole-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-dataconsole
+  template:
+    metadata:
+      labels:
+        app: aigreen-dataconsole
+    spec:
+      containers:
+        - image: "cmelchiorre/kitt4sme:ta08-dataconsole-1.0.0"
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          name: aigreen-dataconsole
+          ports:
+          - containerPort: 1880
+            name: http
+          volumeMounts:
+            - mountPath: /data
+              name: aigreen-ctxconsumer-data-pvc
+      volumes:
+        - name: aigreen-ctxconsumer-data-pvc
+          persistentVolumeClaim:
+            claimName: aigreen-ctxconsumer-data-pvc

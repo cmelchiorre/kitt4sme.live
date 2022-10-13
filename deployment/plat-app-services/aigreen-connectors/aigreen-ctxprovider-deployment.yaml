@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: aigreen-ctxprovider
+  name: aigreen-ctxprovider-deployment
+spec:
+  selector:
+    matchLabels:
+      app: aigreen-ctxprovider
+  template:
+    metadata:
+      labels:
+        app: aigreen-ctxprovider
+    spec:
+      containers:
+        - image: "cmelchiorre/kitt4sme:ta08-ctxprovider-1.0.0"
+          # imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          name: aigreen-ctxprovider
+          ports:
+          - containerPort: 8000
+            name: http
+          env:
+          - name: "ORION_BASE_URL"
+            value: "http://orion:1026"

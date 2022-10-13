@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: aigreen-dataconsole-data-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    namespace: default
+    name: aigreen-dataconsole-data-pvc
+  hostPath:
+    path: "/home/algo/volumes/connectors/dataconsole/data"
+    type: DirectoryOrCreate
