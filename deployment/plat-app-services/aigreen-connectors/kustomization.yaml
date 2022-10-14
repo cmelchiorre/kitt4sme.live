@@ -8,11 +8,11 @@ resources:
 - aigreen-ctxprovider-svc.yaml
 
 # ctxconsumer service
-- aigreen-ctxpconsumer-data-pv.yaml
-- aigreen-ctxpconsumer-data-pvc.yaml
-- aigreen-ctxpconsumer-deployment.yaml
-- aigreen-ctxpconsumer-nodeport.yaml
-- aigreen-ctxpconsumer-svc.yaml
+- aigreen-ctxconsumer-data-pv.yaml
+- aigreen-ctxconsumer-data-pvc.yaml
+- aigreen-ctxconsumer-deployment.yaml
+- aigreen-ctxconsumer-nodeport.yaml
+- aigreen-ctxconsumer-svc.yaml
 
 # dataconsole (nodered) service
 - aigreen-dataconsole-data-pv.yaml
