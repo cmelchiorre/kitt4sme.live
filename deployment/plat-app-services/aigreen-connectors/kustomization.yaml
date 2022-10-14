@@ -3,15 +3,20 @@ kind: Kustomization
 
 resources:
 # ctxprovider service
-# ctxconsumer service
-# dataconsole (nodered) service
+- aigreen-ctxprovider-deployment.yaml
+- aigreen-ctxprovider-nodeport.yaml
+- aigreen-ctxprovider-svc.yaml
 
-# @TODO: add specific descriptors' yaml, below example from /aigreen 
-# backend service
-# - aigreen-backend-customization-pv.yaml
-# - aigreen-backend-customization-pvc.yaml
-# - aigreen-backend-models-pv.yaml
-# - aigreen-backend-models-pvc.yaml
-# - aigreen-backend-deployment.yaml
-# - aigreen-backend-nodeport.yaml
-# - aigreen-backend-svc.yaml
+# ctxconsumer service
+- aigreen-ctxpconsumer-data-pv.yaml
+- aigreen-ctxpconsumer-data-pvc.yaml
+- aigreen-ctxpconsumer-deployment.yaml
+- aigreen-ctxpconsumer-nodeport.yaml
+- aigreen-ctxpconsumer-svc.yaml
+
+# dataconsole (nodered) service
+- aigreen-dataconsole-data-pv.yaml
+- aigreen-dataconsole-data-pvc.yaml
+- aigreen-dataconsole-deployment.yaml
+- aigreen-dataconsole-nodeport.yaml
+- aigreen-dataconsole-svc.yaml
