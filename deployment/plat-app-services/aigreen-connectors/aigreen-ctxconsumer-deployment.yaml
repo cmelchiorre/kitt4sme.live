@@ -14,7 +14,7 @@ spec:
         app: aigreen-ctxconsumer
     spec:
       containers:
-        - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.0.0"
+        - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.1.0"
           # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           name: aigreen-ctxconsumer
@@ -23,7 +23,9 @@ spec:
             name: http
           env:
           - name: "ORION_BASE_URL"
-            value: "http://orion:1026"
+            value: "http://172.16.0.169/orion"
+          - name: "CTXCONSUMER_BASE_URL"
+            value: " http://172.16.0.169/aigreen-ctxconsumer"
           - name: "EXCEL_FILE_PATH"
             value: "/data"
           volumeMounts:
