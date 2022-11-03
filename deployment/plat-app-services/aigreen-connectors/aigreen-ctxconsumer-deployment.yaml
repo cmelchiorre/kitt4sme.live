@@ -14,7 +14,7 @@ spec:
         app: aigreen-ctxconsumer
     spec:
       containers:
-        - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.1.0"
+        - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.2.0"
           # imagePullPolicy: IfNotPresent
           imagePullPolicy: Always
           name: aigreen-ctxconsumer
