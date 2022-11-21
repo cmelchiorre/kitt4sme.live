@@ -31,7 +31,7 @@ spec:
           - name: "MYSQL_PASSWORD"
             value: "aigreen" 
           volumeMounts:
-            - mountPath: /var/lib/mysql
+            - mountPath: "/var/lib/mysql"
               name: aigreen-backend-db-pvc
       volumes:
         - name: aigreen-backend-db-pvc
