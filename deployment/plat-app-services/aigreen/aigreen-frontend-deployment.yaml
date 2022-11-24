@@ -13,6 +13,9 @@ spec:
       labels:
         app: aigreen-frontend
     spec:
+      # @TODO: see ./README.txt securityContext note
+      securityContext:
+        fsGroup: 1001
       containers:
         - imagePullPolicy: Always
           # imagePullPolicy: IfNotPresent

@@ -13,6 +13,7 @@ spec:
       labels:
         app: aigreen-backend-db
     spec:
+      # @TODO: see ./README.txt securityContext note
       securityContext:
         fsGroup: 1001
       containers:

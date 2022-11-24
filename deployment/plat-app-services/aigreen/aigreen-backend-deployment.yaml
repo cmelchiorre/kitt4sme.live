@@ -13,6 +13,9 @@ spec:
       labels:
         app: aigreen-backend
     spec:
+      # @TODO: see ./README.txt securityContext note
+      securityContext:
+        fsGroup: 1001
       containers:
         - image: "cmelchiorre/kitt4sme:ta08-backend-0.1"
           # imagePullPolicy: IfNotPresent

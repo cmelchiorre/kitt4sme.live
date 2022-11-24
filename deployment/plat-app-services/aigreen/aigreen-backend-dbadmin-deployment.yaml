@@ -13,6 +13,9 @@ spec:
       labels:
         app: aigreen-backend-dbadmin
     spec:
+      # @TODO: see ./README.txt securityContext note
+      securityContext:
+        fsGroup: 1001
       containers:
         - image: "phpmyadmin"
           imagePullPolicy: IfNotPresent
