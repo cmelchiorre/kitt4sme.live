@@ -20,7 +20,7 @@ spec:
         - imagePullPolicy: Always
           # imagePullPolicy: IfNotPresent
           #image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.2-test-base-href-3"
-          image: "cmelchiorre/kitt4sme:ta08-frontend-0.1.1"
+          image: "cmelchiorre/kitt4sme:ta08-frontend-1.0.0"
           name: aigreen-frontend
           ports:
           - containerPort: 4200
