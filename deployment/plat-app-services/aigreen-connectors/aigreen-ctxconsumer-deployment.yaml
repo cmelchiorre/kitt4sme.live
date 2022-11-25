@@ -13,6 +13,9 @@ spec:
       labels:
         app: aigreen-ctxconsumer
     spec:
+      # @TODO: see ./README.txt securityContext note
+      securityContext:
+        fsGroup: 1001
       containers:
         - image: "cmelchiorre/kitt4sme:ta08-ctxconsumer-1.2.0"
           # imagePullPolicy: IfNotPresent

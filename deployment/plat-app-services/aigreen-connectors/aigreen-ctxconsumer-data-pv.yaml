@@ -14,5 +14,5 @@ spec:
     namespace: default
     name: aigreen-ctxconsumer-data-pvc
   hostPath:
-    path: "/home/algo/volumes/digesto/backend/customization"
+    path: "/home/algo/volumes/ctxconsumer/data"
     type: DirectoryOrCreate

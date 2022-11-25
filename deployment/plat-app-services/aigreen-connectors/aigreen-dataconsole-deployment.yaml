@@ -13,6 +13,9 @@ spec:
       labels:
         app: aigreen-dataconsole
     spec:
+      # @TODO: see ./README.txt securityContext note
+      securityContext:
+        fsGroup: 1001
       containers:
         - image: "cmelchiorre/kitt4sme:ta08-dataconsole-1.0.0"
           # imagePullPolicy: IfNotPresent
